@@ -27,12 +27,12 @@ export default function Login() {
             <p><br></br></p>
             <div className='flex flex-col mb-4'>
                 
-                <input className='border relative bg-gray-100 p-3' type="email"   placeholder='Email Address or phone number '/>
+                <input className='border relative bg-gray-100 p-3 rounded-md' type="email"   placeholder='Email Address or phone number '/>
             </div>
             <div className='flex flex-col  relative'>
             <div className='flex flex-col  '> 
                 
-                <input className='border relative bg-gray-100 p-3' type={(open === false)? 'password' :'text'}  placeholder='Password'/>
+                <input className='border relative bg-gray-100 p-3 rounded-md' type={(open === false)? 'password' :'text'}  placeholder='Password'/>
             </div>
             <div className='text-2xl absolute top-3 right-2 ' >
                 {
