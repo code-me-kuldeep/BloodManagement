@@ -23,7 +23,7 @@ module.exports = {
       current: 'currentColor',
       'white': '#ffffff',
       'blood': '#F45050',
-      'midnight': '#3C486B',
+      'midnight': '#131F42',
       'metal': '#F0F0F0',
       'ochre': '#F9D949',
       'ivory': '#000000'
