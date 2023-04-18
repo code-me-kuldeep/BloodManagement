@@ -46,7 +46,10 @@ const Navbar = () => {
                 <li className='border-b-2 border-metal w-full'>Blood Urgency</li>
                 <li className='border-b-2 border-metal w-full'>Contact</li>
                 <div className='flex flex-col my-4'>
-                    <button className='text-indigo-600 px-8 py-3 mb-4'>Login</button>
+                    
+                   <button onClick={()=> navigate('/Login')
+                    } className='border-2 text-black px-8 py-3 mr-4'>Login</button>
+                    
                     <button className='px-8 py-3'>Register</button>
                 </div>
         </ul>
