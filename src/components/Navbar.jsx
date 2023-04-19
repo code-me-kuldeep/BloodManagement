@@ -17,7 +17,7 @@ const Navbar = () => {
                 {/* <h1 className='text-3xl font-bold mr-4 sm:text-4xl'>BRAND.</h1> */}
                 <img className='h-12 w-12 mr-2' src={logo} alt="" />
                 <ul className='hidden md:flex font-bold text-1xl'>
-                   <li>Home</li>
+                   <li><a href='/'>Home</a></li>
                    <li>About</li>
                     <li>Donate</li>
                     <li>Blood Urgency</li>

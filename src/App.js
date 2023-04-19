@@ -1,3 +1,4 @@
+import HOME from "./components/HOME";
 import Table from "./components/Table";
 import Cards from "./components/Cards";
 import About from "./components/About"
@@ -8,20 +9,21 @@ import { Route,Routes,} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
       <>
       <Navbar/>
       <Routes>
-           <Route path='/Login' element={<Login />}></Route>
+          <Route path='/' element={<HOME/>}></Route>
+          <Route path='/Login' element={<Login/>}></Route>
+          
       </Routes>  
-        <Navbar/>
-        <Hero/>
+        
+        {/* <Hero/>
         <About/>
         <Cards/>
-        <Table/>
+        <Table/> */}
         
       </>
-    </div>
+    
   );
 }
 
