@@ -3,7 +3,8 @@ import {FcGoogle} from 'react-icons/fc'
 import {AiFillEye, AiFillFacebook,AiFillEyeInvisible} from 'react-icons/ai'
 import logo from '../assets/blood-type-b.png'
 
-import loginImg from '../assets/login.jpg'
+import loginImg from '../assets/bglogin.jpg'
+import himg from '../assets/home.png'
 
 export default function Login() {
     const[open,setopen]=useState(false)
@@ -44,9 +45,17 @@ export default function Login() {
 
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
-        <img className='absolute w-full h-full object-cover ' src={loginImg} alt="/" />
-       
-    
+        <img className='absolute w-full h-auto object-cover ' src={loginImg} alt="/" />
+        <div className='relative flex flex-row justify-center items-center pl-4'>
+            <img  className='h-[20px] w-[20px]' src={himg} />
+        <div className='relative w-full py-2'>
+            <ul>
+                <li className='text-white text-xl'>
+                    <a href="/">Home</a> 
+                </li>
+            </ul>
+        </div>
+        </div>
 
     <div className='flex justify-center items-center h-full'>
         <form onSubmit={handlesubmit} className=' relative max-w-[400px] h-auto w-full mx-auto bg-white p-4 rounded-3xl' >
@@ -60,7 +69,7 @@ export default function Login() {
                 <input onChange={(e)=>{setusername(e.target.value)}} className='border relative bg-white p-3 rounded-md' type="email" value={username} id='username' placeholder='Email Address or phone number '/>
                 <div className='text-blood text-sm'>{usererror}</div>
             </div>
-            <div className='flex flex-col  relative'>
+            <div className='flex flex-col relative'>
             <div className='flex flex-col '> 
                 
                 <input onChange={(e)=>{setpassword(e.target.value)}} className='border relative bg-white p-3 rounded-md' type={(open === false)? 'password' :'text'} value={password} id='password' placeholder='Password'/>
@@ -68,8 +77,8 @@ export default function Login() {
             </div>
             <div className='text-2xl absolute top-3 right-2 ' >
                 {
-                    (open === false)? <AiFillEyeInvisible onClick={toggle}/>:
-                    <AiFillEye onClick={toggle}/>
+                    (open === false)? <AiFillEye onClick={toggle}/>:
+                    <AiFillEyeInvisible onClick={toggle}/>
 
                 }
                 
