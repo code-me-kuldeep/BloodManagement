@@ -5,6 +5,7 @@ import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Login from './components/Login';
+import Personal from "./components/Personal";
 import Registration from './components/Register';
 import { Route,Routes,} from 'react-router-dom';
 

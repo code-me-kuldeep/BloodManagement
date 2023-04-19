@@ -121,6 +121,7 @@ export default function Register() {
                <button className='rounded-xl bg-white shadow-md hover:shadow-2xl hover:bg-current hover:shadow-blood '> <p className='border-1 rounded-xl hover:shadow-xl px-6 py-2 relative flex items-center text-ivory shadow-sm'><FcGoogle className='mr-2' /> Google</p></button>
                <button className='rounded-xl bg hover:bg-current hover:shadow-blood bg-white hover:shadow-2xl'><p className='border-0 shadow-lg hover:shadow-xl px-6 py-2 relative flex items-center text-ivory  rounded-xl'><AiFillFacebook className='mr-2' /> <p className=''>Facebook </p></p></button>
             </div>
+            
         </form>
     </div>
     </div>

@@ -45,7 +45,7 @@ export default function Login() {
 
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
-        <img className='absolute w-full h-auto  object-cover' src={loginImg} alt="/" />
+        <img className='absolute w-full h-auto object-cover' src={loginImg} alt="/" />
         <div className='relative flex flex-row justify-center items-center pl-4'>
             <img  className='h-[20px] w-[20px]' src={himg} />
         <div className='relative w-full py-2'>
@@ -95,9 +95,11 @@ export default function Login() {
             
             <div className='w-full flex items-center justify-center relative py-2'>
                <div className='w-full h-[3px] bg-blood'></div>
-               <p className='text-lg absolute text-black/90 bg-white px-2'> or continue with </p> 
+               <p className='text-lg absolute text-black/90 bg-white px-2'> or continue with </p>
+                
 
             </div>
+            
 
             <div className='flex justify-center py-3'>
                 

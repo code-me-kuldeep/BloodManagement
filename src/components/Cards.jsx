@@ -12,7 +12,6 @@ const Cards = () => {
   
     <div className='max-w-screen py-16 px-4 text-center bg-white'>
     <h1 className='text-3xl md:text-4xl font-bold'>Saving Lives, One Click at a time</h1>
-    <p className='py-4'>On the Caribbean's Best Beaches</p>
     <div className='grid grid-rows-none md:grid-cols-5 py-4 gap-2 md:gap-4'>
         <img className='w-full h-full object-cover col-span-2 md:col-span-3 row-span-2' src={A0} alt="/" />
         <img className='w-full h-full object-cover' src={A1} alt="/" />
