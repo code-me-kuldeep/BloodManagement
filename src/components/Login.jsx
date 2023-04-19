@@ -77,8 +77,8 @@ export default function Login() {
             </div>
             <div className='text-2xl absolute top-3 right-2 ' >
                 {
-                    (open === false)? <AiFillEye onClick={toggle}/>:
-                    <AiFillEyeInvisible onClick={toggle}/>
+                    (open === false)? <AiFillEyeInvisible onClick={toggle}/>:
+                    <AiFillEye onClick={toggle}/>
 
                 }
                 
