@@ -6,19 +6,24 @@ import logo from '../assets/blood-type-b.png'
 import loginImg from '../assets/bglogin.jpg'
 import himg from '../assets/home.png'
 
-export default function Login() {
+export default function Register() {
     const[open,setopen]=useState(false)
     //handle toggle
     const toggle=()=>{
         setopen(!open)
     } 
     //validation part
+    const[Ename,setEname]=useState("");
     const[username,setusername]=useState("");
     const[password,setpassword]=useState("");
+    const[Eerror,setEerror]=useState("");
     const[usererror,setusererror]=useState("");
     const[passerror,setpasserror]=useState("");
     const validate=()=>{
         const error={}
+        if(Ename==="")
+        error.Ename="Name is required";
+
         if (username==="")
         error.username="username is required";
 
@@ -32,12 +37,15 @@ export default function Login() {
         const error = validate();
 
         if(error){
+            setEerror(error.Ename);
            setusererror(error.username);
            setpasserror(error.password);
+           
         }
         else{
             setpasserror("");
             setusererror("");
+            setEerror("");
         }
 
     }
@@ -45,7 +53,7 @@ export default function Login() {
 
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
-        <img className='absolute w-full h-auto  object-cover' src={loginImg} alt="/" />
+        <img className='absolute w-full h-auto object-cover ' src={loginImg} alt="/" />
         <div className='relative flex flex-row justify-center items-center pl-4'>
             <img  className='h-[20px] w-[20px]' src={himg} />
         <div className='relative w-full py-2'>
@@ -58,27 +66,36 @@ export default function Login() {
         </div>
 
     <div className='flex justify-center items-center h-full'>
-        <form onSubmit={handlesubmit} className=' relative max-w-[400px] h-auto w-full mx-auto bg-white p-4 rounded-3xl' >
+        <form onSubmit={handlesubmit} className=' relative max-w-[400px] h-fit w-full mx-auto bg-white p-4 rounded-3xl' >
             <div className='flex justify-between py-6'><div>
-            <h2 className='text-4xl font-bold text-left py-2'>Login</h2></div>
+            <h2 className='text-4xl font-bold text-left py-2'>Register</h2>
+            <p className='text-[#000000] text-sm'>please enter your login details to sign in</p></div>
             <img  src={logo} alt="/"  height={50} width={80}/></div>
-            <p className='text-[#000000]'>please enter your login details to sign in</p>
+            
             <p><br></br></p>
-            <div className='flex flex-col mb-4'>
+            <div className='flex flex-col mb-5'>
+            <input onChange={(e)=>{setEname(e.target.value)}} className='border relative bg-white p-3 rounded-md' type="text" value={Ename} id='Ename'  placeholder='Enter your name '/>
+            <div className='text-blood text-sm'>{Eerror}</div>  
                 
-                <input onChange={(e)=>{setusername(e.target.value)}} className='border relative bg-white p-3 rounded-md' type="email" value={username} id='username' placeholder='Email Address or phone number '/>
-                <div className='text-blood text-sm'>{usererror}</div>
+            </div>
+            
+            
+            <div className='flex flex-col mb-5'>
+            <input onChange={(e)=>{setusername(e.target.value)}} className='border relative bg-white p-3 rounded-md' type="email"  placeholder='Email Address or phone number' value={username} id='username'/>
+            <div className='text-blood text-sm'>{usererror}</div>
+                
             </div>
             <div className='flex flex-col relative'>
             <div className='flex flex-col '> 
                 
-                <input onChange={(e)=>{setpassword(e.target.value)}} className='border relative bg-white p-3 rounded-md' type={(open === false)? 'password' :'text'} value={password} id='password' placeholder='Password'/>
+                <input onChange={(e)=>{setpassword(e.target.value)}} className='border relative bg-white p-3 rounded-md' type={(open === false)? 'password' :'text'}  placeholder='Password' value={password} id='password'/>
                 <div className='text-blood text-sm'>{passerror}</div>
+                
             </div>
             <div className='text-2xl absolute top-3 right-2 ' >
                 {
-                    (open === false)? <AiFillEye onClick={toggle}/>:
-                    <AiFillEyeInvisible onClick={toggle}/>
+                    (open === false)? <AiFillEyeInvisible onClick={toggle}/>:
+                    <AiFillEye onClick={toggle}/>
 
                 }
                 
@@ -88,7 +105,7 @@ export default function Login() {
              
                  <p className='flex items-center mt-3'>Forgot password?</p>
                  </div>
-                <button className='w-full py-2 mt-5 bg-red-700 hover:bg-blood hover:shadow-lg relative text-white  rounded-xl bg-midnight hover:shadow-blood border-0'>Log In</button>
+                <button className='w-full py-2 mt-5 bg-red-700 hover:bg-blood hover:shadow-lg relative text-white  rounded-xl bg-midnight hover:shadow-blood border-0'>Register</button>
             
             <p className='text-center py-2 mt-3'>Don't have an account? <a href="//">Sign up now</a></p>
             

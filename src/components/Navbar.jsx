@@ -32,7 +32,7 @@ const Navbar = () => {
                     } className='border-2 text-black px-8 py-3 mr-4'>Login</button>
                     
                    
-                    <button className='px-8 py-3'>Register</button>
+                    <button onClick={()=> navigate('/Registration')} className='px-8 py-3'>Register</button>
             </div>
             <div className='md:hidden' onClick={handleClick}>
                 {!nav ? <MenuIcon className='w-5'/> : <XIcon className='w-5'/> } 
@@ -50,7 +50,7 @@ const Navbar = () => {
                    <button onClick={()=> navigate('/Login')
                     } className='border-2 text-black px-8 py-3 mr-4'>Login</button>
                     
-                    <button className='px-8 py-3'>Register</button>
+                    <button onClick={()=> navigate('/Registration')} className='px-8 py-3'>Register</button>
                 </div>
         </ul>
         
