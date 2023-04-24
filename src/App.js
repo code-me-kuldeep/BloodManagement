@@ -8,10 +8,12 @@ import Login from './components/Login';
 import Personal from "./components/Personal";
 import Registration from './components/Register';
 import { Route,Routes,} from 'react-router-dom';
+import Contact from './components/Contact';
 
 function App() {
   return (
       <>
+     
 
       <Routes>
           <Route path='/' element={<HOME/>}></Route>
