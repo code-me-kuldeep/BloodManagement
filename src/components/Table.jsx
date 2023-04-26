@@ -2,19 +2,19 @@ import React from 'react'
 import donate from '../assets/Donate.png'
 const Table = () => {
   return (
- <div className='grid md:grid-cols-2 max-w-screen bg-midnight'>
+ <div className='grid md:grid-cols-2 max-w-screen bg-[#131F42]' id="Eligibility">
     <div>
     <img className='w-full justify-center items-center' src={donate} alt="" />
 </div>
-<section className="antialiased bg-gray-100 text-gray-600 h-screen px-4">
+<section className="antialiased text-gray-600 h-screen px-4 bg-[#131F42]">
     <div className="flex flex-col justify-center h-full">
-    <h1 className='font-bold text-3xl text-white py-8 text-center'>LEARN ABOUT DONATIONS</h1>
+    <h1 className='font-bold text-3xl text-[#FFFFFF] py-8 text-center'>LEARN ABOUT DONATIONS</h1>
         <div className="w-full max-w-2xl mx-auto bg-metal shadow-lg rounded-xl border border-gray-200">
                 
-            <div className='bg-blood rounded-tr-xl rounded-tl-xl '><header className=" px-5 py-4 border-b border-gray-100">
-                <h2 className="font-semibold text-center text-white text-2xl">COMPATIBLE BLOOD TYPE DONORS</h2>
+            <div className='bg-[#F45050] rounded-tr-xl rounded-tl-xl '><header className=" px-5 py-4 border-b border-gray-100">
+                <h2 className="font-semibold text-center text-[#FFFFFF] text-2xl">COMPATIBLE BLOOD TYPE DONORS</h2>
             </header></div>
-            <div className="p-3">
+            <div className="p-3 bg-white">
                 <div className="overflow-x-auto">
                     <table className="table-auto w-full md:w-full ">
                         <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">

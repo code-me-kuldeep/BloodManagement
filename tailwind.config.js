@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
@@ -18,16 +19,7 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      'white': '#ffffff',
-      'blood': '#F45050',
-      'midnight': '#131F42',
-      'metal': '#F0F0F0',
-      'ochre': '#F9D949',
-      'ivory': '#000000'
-    },
+    
     extend: {
       keyframes: {
         typing: {
@@ -52,6 +44,6 @@ module.exports = {
         typing: "typing 4s steps(40) infinite alternate, blink .7s infinite"
       }
   },
-  plugins: [],
+  plugins: [ require('tailwind-scrollbar-hide')],
 }
 }

@@ -87,14 +87,14 @@ export default function Personal() {
     
 
     <div className='flex justify-center items-center h-full'>
-        <form onSubmit={handlesubmit} className='max-w-full h-full w-full mx-auto bg-white p-4 ' >
+        <form onSubmit={handlesubmit} className='max-w-full h-full w-full mx-auto bg-[#FFFFFF] p-4 ' >
             <div className='flex justify-between py-6'><div>
             <h2 className='text-4xl font-bold text-left py-2'>Personal Information</h2></div>
             
             <img  src={logo} alt="/"  height={60} width={60}/></div>
             <div className='w-full flex items-center justify-center relative py-2'>
-               <div className='w-full h-[3px] bg-blood'></div>
-               <p className='text-lg absolute text-black/90 bg-white px-2'> </p>
+               <div className='w-full h-[3px] bg-[#F45050]'></div>
+               <p className='text-lg absolute text-black/90 bg-[#FFFFFF] px-2'> </p>
                 
 
             </div>
@@ -105,25 +105,25 @@ export default function Personal() {
             <div className='flex justify-between py-3'>
             <div className='flex flex-col mb-4'>
                 <label>First name</label>
-                <input className='border relative rounded-md bg-white p-3' type="text" value={Fname} id='Fname'  placeholder=' '/>
-                <div className='text-blood text-sm'>{Fnameerror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="text" value={Fname} id='Fname'  placeholder=' '/>
+                <div className='text-[#F45050] text-sm'>{Fnameerror}</div>
                 <label>DOB</label>
-                <input className='border relative rounded-md bg-white p-3' type="date" value={DOB} id='DOB' placeholder=''/>
-                <div className='text-blood text-sm'>{DOBerror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="date" value={DOB} id='DOB' placeholder=''/>
+                <div className='text-[#F45050] text-sm'>{DOBerror}</div>
                 <label>Phone Number</label>
-                <input className='border relative rounded-md bg-white p-3' type="number" value={phn} id='phn' placeholder='+91'/>
-                <div className='text-blood text-sm'>{phnerror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="number" value={phn} id='phn' placeholder='+91'/>
+                <div className='text-[#F45050] text-sm'>{phnerror}</div>
                 <label>Address</label>
-                <input className='border relative rounded-md bg-white p-3 h-half' type="text" value={Aadhar} id='Aadhar'  placeholder=' '/>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3 h-half' type="text" value={Aadhar} id='Aadhar'  placeholder=' '/>
                 
             </div>
             
             <div className='flex flex-col  '> 
             <label>Middle name</label>
-                <input className='border relative rounded-md bg-white p-3' type="text"  placeholder=''/>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="text"  placeholder=''/>
                 <label>Aadhar Number</label>
-                <input className='border relative rounded-md bg-white p-3' type="text" value={Aadhar } id='Aadhar ' placeholder=''/>
-                <div className='text-blood text-sm'>{Aadharerror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="text" value={Aadhar } id='Aadhar ' placeholder=''/>
+                <div className='text-[#F45050] text-sm'>{Aadharerror}</div>
                 <br></br>
                 <div>
                 <label>Gender </label><br></br>
@@ -134,16 +134,16 @@ export default function Personal() {
                  <input type="radio" name='gender' value="others" />
                 <label > Others</label>
                 </div>
-                <div className='text-blood text-sm'>{gendererror}</div>
+                <div className='text-[#F45050] text-sm'>{gendererror}</div>
 
             </div>
             <div className='flex flex-col mb-4'>
             <label>Last name</label>
-                <input className='border relative rounded-md bg-white p-3' type="text"  placeholder=''/>
-                <div className='text-blood text-sm'>{Lnameerror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="text"  placeholder=''/>
+                <div className='text-[#F45050] text-sm'>{Lnameerror}</div>
                 <label>Blood Group</label>
-                <input className='border relative rounded-md bg-white p-3' type="text" value={Bgroup} id='Bgroup' placeholder=''/>
-                <div className='text-blood text-sm'>{Bgrouperror}</div>
+                <input className='border relative rounded-md bg-[#FFFFFF] p-3' type="text" value={Bgroup} id='Bgroup' placeholder=''/>
+                <div className='text-[#F45050] text-sm'>{Bgrouperror}</div>
                
             </div>
             <div className='flex flex-col mb-4'>
@@ -153,7 +153,7 @@ export default function Personal() {
             </div>
            
             <div className=' flex flex-col items-center'>
-                <button className='w-2/12 py-2 mt-5 bg-red-700 hover:bg-red-600  relative text-white rounded-md'>Proceeed</button>
+                <button className='w-2/12 py-2 mt-5 bg-red-700 hover:bg-red-600  relative text-[#FFFFFF] rounded-md'>Proceeed</button>
                 </div>
           
             

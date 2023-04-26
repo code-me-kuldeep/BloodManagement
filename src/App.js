@@ -18,12 +18,19 @@ function App() {
       
      
 
-      <Routes>
+      
+      {/* <Navbar/>
+        <Hero/>
+        <About/>
+        <Cards/>
+        <Table/>
+        <Contact/> */}
+        {/* <HOME/> */}
+        <Routes>
           <Route path='/' element={<HOME/>}></Route>
-          <Route path='/Login' element={<Login2/>}></Route>
-          <Route path='/Registration' element={<Register2/>}></Route>
-          
-      </Routes>  
+          <Route  path='/Login2' element={<Login2/>}></Route>
+          <Route path='/Register2' element={<Register2/>}></Route>
+        </Routes>  
         
         {/* <Hero/>
         <About/>

@@ -13,6 +13,18 @@
     @apply p-4
   }
   button{
-    @apply text-white border font-bold bg-midnight hover:bg-transparent hover:bg-blood hover:transition-all rounded-md 
+    @apply text-white border font-bold bg-[#131F42] hover:bg-transparent hover:bg-[#F45050] hover:transition-all rounded-md 
+  }
+}
+
+@layer components{
+  .header-icon {
+    @apply w-6 h-6 cursor-pointer
+  }
+  .nav-icon {
+    @apply w-6 h-6 cursor-pointer
+  }
+  .invest-icon{
+    @apply w-6 h-6  stroke-gray-600
   }
 }

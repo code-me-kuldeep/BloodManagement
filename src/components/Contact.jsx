@@ -7,7 +7,7 @@ import Contact from '../assets/Contact.jpg'
 
 export default function Login3() {
   return (
-    <div className='w-full h-screen flex'>
+    <div className='w-full h-screen flex' id="Contact">
         <div className='grid grid-cols-1 md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-gray-600 sm:max-w-[900px]'>
             <div className='w-full h-[550px] hidden md:block'>
                 <img className='w-half itmes-end right-10 h-full' src={Contact} alt="/" />
@@ -65,11 +65,11 @@ export default function Login3() {
 
                     </div>
                     
-                    <div className="px-4 py-3  bg-white rounded-b-lg dark:bg-gray-800">
+                    <div className=" py-3  bg-white rounded-b-lg dark:bg-gray-800">
            
-           <textarea id="editor" rows="7" className='text-slate-950	border  p-2 w-full border-black' placeholder="Describe your issue..." required></textarea>
+           <textarea id="editor" rows="7" className='text-slate-950 border-2 rounded-md resize-none	border-gray-100  p-2 w-full' placeholder="Describe your issue..." required></textarea>
        </div>
-       <button className='w-full py-2 my-4 bg-green-600 hover:bg-green-500'>Send</button>
+       <button className='w-full py-2 my-4 bg-[#131F42] hover:bg-[#F45050]'>Send</button>
                     
                 </form>
                
