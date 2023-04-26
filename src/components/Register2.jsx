@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {AiFillEye, AiFillFacebook,AiFillEyeInvisible} from 'react-icons/ai'
 import logo from '../assets/blood-type-b.png'
-import lgimg from '../assets/lgimg.jpg'
+import lgimg from '../assets/lrimg.jpg'
 
 import loginImg from '../assets/bglogin.jpg'
 import himg from '../assets/home.png'
@@ -54,16 +54,7 @@ export default function Register() {
 
   return (
     <div className='w-full h-screen flex'>
-    <div className='relative flex flex-row justify-center items-center pl-4'>
-        <img  className='h-[20px] w-[20px]' src={himg} />
-    <div className='relative w-full py-2 top-10'>
-        <ul>
-            <li className='text-blood text-xl'>
-                <a href="/">Home</a> 
-            </li>
-        </ul>
-    </div>
-    </div>
+    
     
 <div className='grid grid-cols-1 md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-gray-600 sm:max-w-[900px]'>
 <div className='w-full h-[550px] hidden md:block'>

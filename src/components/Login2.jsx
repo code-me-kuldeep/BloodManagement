@@ -3,7 +3,7 @@ import {FcGoogle} from 'react-icons/fc'
 import {AiFillEye, AiFillFacebook,AiFillEyeInvisible} from 'react-icons/ai'
 import logo from '../assets/blood-type-b.png'
 
-import lgimg from '../assets/lgimg.jpg'
+import lgimg from '../assets/lrimg.jpg'
 import himg from '../assets/home.png'
 import trees from '../assets/trees.jpg'
 
