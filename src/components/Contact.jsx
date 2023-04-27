@@ -21,7 +21,7 @@ export default function Login3() {
     const validate=()=>{
         const error={}
         if (username==="")
-        error.username="username is required";
+        error.username="Firstname is required";
 
         if(email==="")
         error.email="Email  is required";
@@ -59,7 +59,7 @@ export default function Login3() {
                     <p className='mb-6 text-sm'>24/7 we will answer your questions and problems</p>
                     <div className='flex justify-between py-2'>
                     <div class='flex flex-col relative'>
-                        <input c className='border p-2 mr-1' type="text" value={username} id='username' placeholder='     Username' />
+                        <input c className='border p-2 mr-1' type="text" value={username} id='name' placeholder='     Firstname' />
                         <div className='text-blood text-sm'>{usererror}</div>
                         <div className='text-2xl absolute top-3 left-1' >
                 {
