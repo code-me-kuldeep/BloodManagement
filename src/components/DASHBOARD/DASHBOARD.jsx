@@ -24,7 +24,9 @@ const DASHBOARD = ({ user }) => {
             <RightPart />
           </div>
         ) : (
+          <div className="border-2 border-red-800 grid grid-cols-1 xl:grid-cols-2 col-span-10 w-full">
           <Outlet />
+          </div>
         )}
         {/* Home page end */}
       </div>

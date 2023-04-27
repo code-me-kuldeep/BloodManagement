@@ -12,6 +12,7 @@ import { RecoilRoot } from "recoil";
 import Register from "./components/HOME/Register";
 import FindBlood from "./components/DASHBOARD/pages/FindBlood"
 import RequiredBloodForm from "./components/DASHBOARD/pages/RequiredBloodForm"
+import DonateBloodForm from "./components/DASHBOARD/pages/DonateBloodForm"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         element: <RequiredBloodForm/>
       },
       {
-        path: 'dashboard/donateBlood',
-        element: <RequiredBloodForm/>
+        path: 'dashboard/donate',
+        element: <DonateBloodForm/>
       },
     ]
   },

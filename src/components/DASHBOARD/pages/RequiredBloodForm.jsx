@@ -1,9 +1,9 @@
 import React from 'react'
 
-const RequiredBloodFrom = () => {
+const RequiredBloodForm = () => {
   return (
 	<div>ReceiveBloodFrom</div>
   )
 }
 
-export default RequiredBloodFrom
+export default RequiredBloodForm
