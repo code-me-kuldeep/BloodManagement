@@ -2,22 +2,28 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillFacebook, AiFillEyeInvisible } from "react-icons/ai";
 import logo from "../assets/blood-type-b.png";
-import authService from '../../firebase/auth'
+import authService from "../../firebase/auth";
 import lgimg from "../assets/lrimg.jpg";
+import DashBoard from "../DASHBOARD/DashBoard";
 import himg from "../assets/home.png";
 import trees from "../assets/trees.jpg";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Login() {
+  const [user, loading, error] = useAuthState(authService.auth);
+
   const [open, setopen] = useState(false);
+
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  const [usererror, setusererror] = useState("");
+  const [passerror, setpasserror] = useState("");
+
   //handle toggle
   const toggle = () => {
     setopen(!open);
   };
   //validation part
-  const [username, setusername] = useState("");
-  const [password, setpassword] = useState("");
-  const [usererror, setusererror] = useState("");
-  const [passerror, setpasserror] = useState("");
   const validate = () => {
     const error = {};
     if (username === "") error.username = "username is required";
@@ -38,6 +44,10 @@ export default function Login() {
       setusererror("");
     }
   };
+
+  if(user){
+    return <><DashBoard user={user}/></> 
+  }
 
   return (
     <div className="w-full h-screen flex">
@@ -125,7 +135,10 @@ export default function Login() {
             </div>
           </form>
           <div className="flex justify-center py-3">
-            <button onClick={()=>authService.signInWithGoogle()} className="rounded-xl bg-white shadow-md hover:shadow-2xl hover:bg-current hover:shadow-blood ">
+            <button
+              onClick={() => authService.signInWithGoogle()}
+              className="rounded-xl bg-white shadow-md hover:shadow-2xl hover:bg-current hover:shadow-blood "
+            >
               {" "}
               <p className="border-1 rounded-xl hover:shadow-xl px-6 py-2 relative flex items-center text-ivory shadow-sm text-black">
                 <FcGoogle className="mr-2" /> Google
