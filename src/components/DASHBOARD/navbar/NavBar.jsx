@@ -1,8 +1,8 @@
 import React from "react";
 import { navLinks } from "./utils/NavDB";
 import { useRecoilState } from "recoil";
-import { activeNavItemState } from "../../atoms/ActiveNavBarAtom";
-
+// import { activeNavItemState } from "../../atoms/ActiveNavBarAtom";
+import { activeNavItemState } from "../../DASHBOARD/atoms/ActiveNavBarAtom";
 function NavBar() {
   return (
     <nav className="col-span-2 border-r border-gray-200 min-h-[90vh] w-[80px] xl:w-[250px] pt-8 px-1 flex flex-col items-start justify-between">
