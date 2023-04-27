@@ -20,8 +20,8 @@ const DASHBOARD = ({ user }) => {
         {/* Home page start */}
         {isHomepage ? (
           <div className="border-2 border-red-800 grid grid-cols-1 xl:grid-cols-5 col-span-10 w-full">
-            <LeftPart />
-            <RightPart />
+            <LeftPart user={user}/>
+            <RightPart user={user}/>
           </div>
         ) : (
           <div className="border-2 border-red-800 grid grid-cols-1 xl:grid-cols-2 col-span-10 w-full">
