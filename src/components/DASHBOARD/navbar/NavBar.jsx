@@ -3,6 +3,7 @@ import { navLinks } from "./utils/NavDB";
 import { useRecoilState } from "recoil";
 // import { activeNavItemState } from "../../atoms/ActiveNavBarAtom";
 import { activeNavItemState } from "../../DASHBOARD/atoms/ActiveNavBarAtom";
+import authService from "../../../firebase/auth";
 function NavBar() {
   return (
     <nav className="col-span-2 border-r border-gray-200 min-h-[90vh] w-[80px] xl:w-[250px] pt-8 px-1 flex flex-col items-start justify-between">
@@ -17,9 +18,13 @@ function NavBar() {
       </div>
       <div className="xl:flex flex-col hidden  items-center justify-center space-y-4 px-4 py-4 ">
         <h1 className="text-xl w-full font-medium">
-          Saving Lives <br /> One Click at a time 
+          Saving Lives <br /> One Click at a time
         </h1>
-        <p> Donate Now. Save now<br/> Join our Raktjharna mission </p>
+        <p>
+          {" "}
+          Donate Now. Save now
+          <br /> Join our Raktjharna mission{" "}
+        </p>
         <button className=" w-full py-2 px-3 bg-black text-white">
           Volunteer with us
         </button>
@@ -38,14 +43,29 @@ function NavItem({ link }) {
          activeNav === link.id && "border-gray-900 "
        } `}
     >
-      <span> {link.icon}</span>
-      <h1
-        className={`text-gray-600 group-hover:text-black xl:flex hidden ${
-          activeNav === link.id && "text-black "
-        }} `}
-      >
-        {link.title}
-      </h1>
+      {link.title === "LogOut" ? (
+        <div className="flex gap-8" onClick={() => authService.userSignOut()}>
+          <span> {link.icon}</span>
+          <h1
+            className={`text-gray-600 group-hover:text-black xl:flex hidden ${
+              activeNav === link.id && "text-black "
+            }} `}
+          >
+            {link.title}
+          </h1>
+        </div>
+      ) : (
+        <>
+          <span> {link.icon}</span>
+          <h1
+            className={`text-gray-600 group-hover:text-black xl:flex hidden ${
+              activeNav === link.id && "text-black "
+            }} `}
+          >
+            {link.title}
+          </h1>
+        </>
+      )}
     </div>
   );
 }

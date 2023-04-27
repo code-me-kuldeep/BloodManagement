@@ -5,9 +5,10 @@ import NavBar from './navbar/NavBar';
 import LeftPart from './leftPart/LeftPart';
 import RightPart from './rightPart/RightPart';
 
-const DASHBOARD = () => {
+const DASHBOARD = ({user}) => {
     return (
         <div className="App overflow-y-hidden ">
+          {/* Head Navigation */}
          <Header/>
          <div className='w-full min-h-[90vh] grid grid-cols-12'>
          <NavBar/>
