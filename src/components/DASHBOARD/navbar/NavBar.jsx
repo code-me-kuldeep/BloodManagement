@@ -1,6 +1,7 @@
 import React from "react";
 import { navLinks } from "./utils/NavDB";
 import { useRecoilState } from "recoil";
+import { NavLink } from "react-router-dom";
 // import { activeNavItemState } from "../../atoms/ActiveNavBarAtom";
 import { activeNavItemState } from "../../DASHBOARD/atoms/ActiveNavBarAtom";
 import authService from "../../../firebase/auth";
@@ -9,7 +10,9 @@ function NavBar() {
     <nav className="col-span-2 border-r border-gray-200 min-h-[90vh] w-[80px] xl:w-[250px] pt-8 px-1 flex flex-col items-start justify-between">
       <div className="space-y-8 w-full ">
         {navLinks.slice(0, 4).map((link) => (
+          // <NavLink>
           <NavItem link={link} key={link.id} />
+          // </NavLink>
         ))}
         <div className="w-full border-t border-gray-200" />
         {navLinks.slice(4, 6).map((link) => (
@@ -48,14 +51,29 @@ function NavItem({ link }) {
           <span> {link.icon}</span>
           <h1
             className={`text-gray-600 group-hover:text-black xl:flex hidden ${
-              activeNav === link.id && "text-black "
+              activeNav === link.id && "text-black"
             }} `}
           >
             {link.title}
           </h1>
         </div>
-      ) : (
+      ) : link.title === "Dashboard" ? (
         <>
+          <NavLink className="flex gap-8" to="/Login">
+            {console.log(link.redirect)}
+            <span> {link.icon}</span>
+            <h1
+              className={`text-gray-600 group-hover:text-black xl:flex hidden ${
+                activeNav === link.id && "text-black "
+              }} `}
+            >
+              {link.title}
+            </h1>
+          </NavLink>
+        </>
+      ) : (
+        <NavLink className="flex gap-8" to={`dashboard${link.redirect}`}>
+          {console.log(link.redirect)}
           <span> {link.icon}</span>
           <h1
             className={`text-gray-600 group-hover:text-black xl:flex hidden ${
@@ -64,7 +82,7 @@ function NavItem({ link }) {
           >
             {link.title}
           </h1>
-        </>
+        </NavLink>
       )}
     </div>
   );
