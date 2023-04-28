@@ -21,7 +21,7 @@ export const navLinks = [
   },
   {
     id: 3,
-    title: "News",
+    title: "Blood Required",
     icon: <ChatAltIcon className="nav-icon" />,
     redirect: '/required'
   },

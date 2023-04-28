@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <FindBlood/>
       },
       {
-        path: 'dashboard/requireBlood',
+        path: 'dashboard/required',
         element: <RequiredBloodForm/>
       },
       {
