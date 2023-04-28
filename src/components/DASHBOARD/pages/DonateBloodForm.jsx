@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 export default function DonateBloodForm() {
+  const [notification, setNotification] = useState(null);
+  const [loading, setLoading] = useState(null);
+
   return (
     <Formik
       initialValues={{
@@ -25,35 +28,41 @@ export default function DonateBloodForm() {
         phone: Yup.number().required("Phone cannot be empty"),
         group: Yup.string().required("Blood Group cannot be empty"),
       })}
-      onSubmit={async(values, actions) => {
+      onSubmit={async (values, actions) => {
         console.log(values);
-        console.log('happening');
+        console.log("happening");
         const responseBody = {
-          name: values.firstName +' '+ values.lastName,
+          name: values.firstName + " " + values.lastName,
           age: values.age,
           gender: values.gender,
           group: values.group,
           email: values.email,
           phone: values.phone,
-        }
+        };
         console.log(responseBody);
         try {
-          await fetch('http://localhost:3002/api/donate', {
-            method: 'POST',
+          setLoading(true);
+          await fetch("http://localhost:3002/api/donate", {
+            method: "POST",
             body: JSON.stringify(responseBody),
             headers: {
-              'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-          })
+          });
+          setNotification(
+            "Form Successfully submitted. Check your mail for confirmation"
+          );
           setTimeout(() => {
             actions.resetForm();
-          }, 1000);  
+          }, 2000);
+          setLoading(false);
         } catch (error) {
-          console.log(error)
-        }     
+          console.log(error);
+        }
       }}
     >
       <Form className="flex flex-col p-0 mt-5 space-y-4 text-black bg-white rounded-lg shadow-xl lg:p-10 lg:space-y-6">
+        <h1 className="text-xl">Blood Donation Form</h1>
         <Field name="firstName">
           {({ field, form }) => (
             <div className="relative">
@@ -197,7 +206,7 @@ export default function DonateBloodForm() {
           className="text-xs italic text-right text-primary-red"
           style={{ marginTop: "0.5rem" }}
         />
-        
+
         <div className="flex gap-5">
           <div>
             <Field name="age">
@@ -357,13 +366,14 @@ export default function DonateBloodForm() {
           type="submit"
           className="py-4 text-sm tracking-wide text-black uppercase rounded-lg shadow-xl outline-none lg:text-base bg-red-300 hover:bg-opacity-75 focus:outline-none "
         >
-          Donate Blood
+          {loading ? <>Submitting...</> : <>Donate Blood</>}
         </button>
         <div className="text-xs font-medium text-gray-800 ">
           By clicking the button, you are agreeing to our{" "}
           <span className="text-xs font-medium text-primary-red">
             Terms and Services
           </span>
+          <div className="text-red">{notification}</div>
         </div>
       </Form>
     </Formik>
