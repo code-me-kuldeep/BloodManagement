@@ -25,12 +25,32 @@ export default function DonateBloodForm() {
         phone: Yup.number().required("Phone cannot be empty"),
         group: Yup.string().required("Blood Group cannot be empty"),
       })}
-      onSubmit={(values, actions) => {
+      onSubmit={async(values, actions) => {
         console.log(values);
         console.log('happening');
-        setTimeout(() => {
-          actions.resetForm();
-        }, 1000);
+        const responseBody = {
+          name: values.firstName +' '+ values.lastName,
+          age: values.age,
+          gender: values.gender,
+          group: values.group,
+          email: values.email,
+          phone: values.phone,
+        }
+        console.log(responseBody);
+        try {
+          await fetch('http://localhost:3002/api/donate', {
+            method: 'POST',
+            body: JSON.stringify(responseBody),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          })
+          setTimeout(() => {
+            actions.resetForm();
+          }, 1000);  
+        } catch (error) {
+          console.log(error)
+        }     
       }}
     >
       <Form className="flex flex-col p-0 mt-5 space-y-4 text-black bg-white rounded-lg shadow-xl lg:p-10 lg:space-y-6">
