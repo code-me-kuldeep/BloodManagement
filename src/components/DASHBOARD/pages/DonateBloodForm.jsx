@@ -63,6 +63,7 @@ export default function DonateBloodForm() {
     >
       <Form className="flex flex-col p-0 mt-5 space-y-4 text-black bg-white rounded-lg shadow-xl lg:p-10 lg:space-y-6">
         <h1 className="text-xl">Blood Donation Form</h1>
+        <p className="text-purple-600">{notification}</p>
         <Field name="firstName">
           {({ field, form }) => (
             <div className="relative">

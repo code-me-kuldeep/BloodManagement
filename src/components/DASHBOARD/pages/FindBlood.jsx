@@ -7,7 +7,6 @@ const FindBlood = () => {
       try {
         const response = await fetch("http://localhost:3002/api/donate");
         const data = await response.json();
-        console.log(data);
         setBlood(data);
       } catch (error) {
         console.log(error);

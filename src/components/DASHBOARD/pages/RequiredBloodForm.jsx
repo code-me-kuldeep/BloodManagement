@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 export default function RequiredBloodForm() {
+  const [notification, setNotification] = useState(null)
+  const [loading, setLoading] = useState(null);
+
   return (
     <Formik
       initialValues={{
@@ -26,6 +29,7 @@ export default function RequiredBloodForm() {
         group: Yup.string().required("Blood Group cannot be empty"),
       })}
       onSubmit={async(values, actions) => {
+        setLoading(true)
         console.log(values);
         console.log('happening');
         const responseBody = {
@@ -36,20 +40,26 @@ export default function RequiredBloodForm() {
           email: values.email,
           phone: values.phone,
         }
-        await fetch('http://localhost:3002/api/donate', {
+        const response = await fetch('http://localhost:3002/api/require', {
           method: 'POST',
           body: JSON.stringify(responseBody),
           headers: {
             'Content-Type': 'application/json'
           },
         })
+          const data = await response.json()
+          console.log(data.success);
+          setNotification(
+            data.success
+          );
         setTimeout(() => {
           actions.resetForm();
         }, 1000);
       }}
     >
       <Form className="flex flex-col p-0 mt-5 space-y-4 text-black bg-white rounded-lg shadow-xl lg:p-10 lg:space-y-6">
-        <h1>Donate Form</h1>
+        <h1>Blood Request Form</h1>
+        <p className="text-purple-600">{notification}</p>
         <Field name="firstName">
           {({ field, form }) => (
             <div className="relative">
